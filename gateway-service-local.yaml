@@ -1,6 +1,6 @@
 spring:
   application:
-    name: gateway-server
+    name: gateway-service
 
 eureka:  
   client:
@@ -9,17 +9,17 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://127.1.1.1:8082/template/eureka/
+      defaultZone: http://localhost:8082/template/eureka/
 
 zuul:
   routes:
     book-service:
       path: /book-service/**
       sensitive-headers: Set-Cookie,Authorization
-    discovery-server:
-      path: /discovery-server/**
+    discovery-service:
+      path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
-      url: http://127.1.1.1:8082/template                       
+      url: http://localhost:8082/template                       
 
 
 hystrix:
@@ -29,7 +29,7 @@ hystrix:
               isolation:
                   thread:
                       timeoutInMilliseconds: 600000
-      discovery-server:
+      discovery-service:
           execution:
               isolation:
                   thread:
