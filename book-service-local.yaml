@@ -33,9 +33,7 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8082/template/eureka/    
 
-server:
-  ssl:
-    enabled: false
+server:  
   port: 8083
   servlet:
     context-path: /template

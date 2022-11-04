@@ -16,6 +16,7 @@ zuul:
     book-service:
       path: /book-service/**
       sensitive-headers: Set-Cookie,Authorization
+      url: http://develophost:8083/template
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
