@@ -4,12 +4,12 @@ spring:
 
 eureka:
   instance:
-    hostname: 127.1.1.1
+    hostname: develophost
   client:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://127.1.1.1:8083/eureka/    
+      defaultZone: http://develophost:8083/eureka/    
 
 server:
   port: 8083

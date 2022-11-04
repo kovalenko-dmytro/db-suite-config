@@ -9,7 +9,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://127.1.1.1:8082/template/eureka/
+      defaultZone: http://develophost:8082/template/eureka/
 
 zuul:
   routes:
@@ -19,7 +19,7 @@ zuul:
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
-      url: http://127.1.1.1:8082/template                       
+      url: http://develophost:8082/template                       
 
 
 hystrix:
@@ -36,6 +36,6 @@ hystrix:
                       timeoutInMilliseconds: 600000                
 
 server:
-  port: 8083
+  port: 8080
   servlet:
     context-path: /template
