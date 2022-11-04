@@ -8,7 +8,7 @@ spring:
   liquibase:
     change-log: classpath:db/db.changelog.xml
   datasource:
-    url: jdbc:postgresql://localhost:8080/microservices_template_book_service_db?ssl=false
+    url: jdbc:postgresql://localhost:8080/microservices_template_book_service_db?sslMode=disable
     username: postgres
     password: root
   swagger:
@@ -34,6 +34,8 @@ eureka:
       defaultZone: http://localhost:8082/template/eureka/    
 
 server:
+  ssl:
+    enabled: false
   port: 8083
   servlet:
     context-path: /template
