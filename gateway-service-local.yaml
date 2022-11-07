@@ -36,16 +36,16 @@ hystrix:
                   thread:
                       timeoutInMilliseconds: 600000    
 
-server:
-  port: 8080
-  forward-headers-strategy: framework  
-  servlet:
-    context-path: /template
-
 springdoc:
   api-docs:
     enabled: true    
   swagger-ui:    
     urls:
       - name: book-service
-        url: ${zuul.routes.book-service.url}/api-docs    
+        url: ${zuul.routes.book-service.url}/api-docs  
+
+server:
+  port: 8080
+  forward-headers-strategy: framework  
+  servlet:
+    context-path: /template  
