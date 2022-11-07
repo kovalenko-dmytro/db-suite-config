@@ -35,5 +35,6 @@ eureka:
 
 server:  
   port: 8083
+  forward-headers-strategy: framework
   servlet:
     context-path: /template
