@@ -43,11 +43,10 @@ server:
 
 springdoc:
   api-docs:
-    enabled: true
-    path: /api-docs
+    enabled: true    
   swagger-ui:
-    configUrl: http://localhost:8080/template/api-docs/swagger-config
-    path: /api.html
+    configUrl: ${server.servlet.contextPath}/v3/api-docs/swagger-config
+    url: ${server.servlet.contextPath}/v3/api-docs
     urls:
       - name: book-service
         url: ${zuul.routes.book-service.url}/api-docs    
