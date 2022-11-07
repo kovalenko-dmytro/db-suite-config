@@ -38,6 +38,7 @@ hystrix:
 
 springdoc:
   swagger-ui:
+    path: /swagger-ui
     configUrl: /swagger-config.json
 
 server:
