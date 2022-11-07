@@ -37,7 +37,8 @@ hystrix:
                       timeoutInMilliseconds: 600000    
 
 server:
-  port: 8080  
+  port: 8080
+  forward-headers-strategy: framework  
   servlet:
     context-path: /template
 
