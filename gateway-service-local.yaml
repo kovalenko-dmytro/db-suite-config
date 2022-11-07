@@ -36,6 +36,17 @@ hystrix:
                   thread:
                       timeoutInMilliseconds: 600000                
 
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    configUrl: ${server.servlet.contextPath}/api-docs/swagger-config
+    url: ${server.servlet.contextPath}/api-docs
+    urls:
+      - name: book-service
+        url: ${zuul.routes.book-service.url}/api-docs      
+
 server:
   port: 8080  
   servlet:
