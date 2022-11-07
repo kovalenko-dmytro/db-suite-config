@@ -46,7 +46,7 @@ springdoc:
     enabled: true
     path: /api-docs
   swagger-ui:
-    configUrl: /api-docs/swagger-config
+    configUrl: http://localhost:8080/template/api-docs/swagger-config
     path: /api.html
     urls:
       - name: book-service
