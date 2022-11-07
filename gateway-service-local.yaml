@@ -36,6 +36,10 @@ hystrix:
                   thread:
                       timeoutInMilliseconds: 600000                
 
+springdoc:
+  swagger-ui:
+    configUrl: /swagger-config.json
+
 server:
   port: 8080  
   servlet:
