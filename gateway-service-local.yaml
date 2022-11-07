@@ -34,20 +34,20 @@ hystrix:
           execution:
               isolation:
                   thread:
-                      timeoutInMilliseconds: 600000                
+                      timeoutInMilliseconds: 600000    
+
+server:
+  port: 8080  
+  servlet:
+    context-path: /template
 
 springdoc:
   api-docs:
     enabled: true
     path: /api-docs
   swagger-ui:
-    configUrl: ${server.servlet.contextPath}/api-docs/swagger-config
-    url: ${server.servlet.contextPath}/api-docs
+    configUrl: /api-docs/swagger-config
+    path: /api.html
     urls:
       - name: book-service
-        url: ${zuul.routes.book-service.url}/api-docs      
-
-server:
-  port: 8080  
-  servlet:
-    context-path: /template
+        url: ${zuul.routes.book-service.url}/api-docs    
