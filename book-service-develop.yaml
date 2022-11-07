@@ -18,9 +18,9 @@ spring:
 
 springdoc:
   api-docs:
-    path: /book-api-docs
+    path: /book-service-api
   swagger-ui:
-    path: /swagger-ui  
+    path: /api.html  
 
 eureka:
   instance:
