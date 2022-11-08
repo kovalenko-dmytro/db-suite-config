@@ -17,6 +17,10 @@ zuul:
       path: /book-service/**
       sensitive-headers: Set-Cookie,Authorization
       url: http://localhost:8083/template
+    user-service:
+      path: /user-service/**
+      sensitive-headers: Set-Cookie,Authorization
+      url: http://localhost:8084/template  
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
@@ -26,6 +30,11 @@ zuul:
 hystrix:
   command:
       book-service:
+          execution:
+              isolation:
+                  thread:
+                      timeoutInMilliseconds: 600000
+      user-service:
           execution:
               isolation:
                   thread:
@@ -42,7 +51,9 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: ${zuul.routes.book-service.url}/api-docs  
+        url: ${zuul.routes.book-service.url}/api-docs
+      - name: user-service
+        url: ${zuul.routes.user-service.url}/api-docs    
 
 server:
   port: 8080

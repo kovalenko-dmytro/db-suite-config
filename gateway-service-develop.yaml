@@ -17,6 +17,10 @@ zuul:
       path: /book-service/**
       sensitive-headers: Set-Cookie,Authorization
       url: http://develophost:8083/template
+    user-service:
+      path: /user-service/**
+      sensitive-headers: Set-Cookie,Authorization
+      url: http://develophost:8084/template
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
@@ -29,10 +33,17 @@ springdoc:
     urls:
       - name: book-service
         url: ${zuul.routes.book-service.url}/api-docs
+      - name: user-service
+        url: ${zuul.routes.user-service.url}/api-docs  
 
 hystrix:
   command:
       book-service:
+          execution:
+              isolation:
+                  thread:
+                      timeoutInMilliseconds: 600000
+      user-service:
           execution:
               isolation:
                   thread:
