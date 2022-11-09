@@ -32,9 +32,9 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: ${zuul.routes.book-service.url}/api-docs
+        url: /book-service/api-docs
       - name: user-service
-        url: ${zuul.routes.user-service.url}/api-docs  
+        url: /user-service/api-docs  
 
 hystrix:
   command:
