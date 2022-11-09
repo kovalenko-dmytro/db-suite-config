@@ -51,9 +51,9 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: ${zuul.routes.book-service.path}/api-docs
+        url: /book-service/api-docs
       - name: user-service
-        url: ${zuul.routes.user-service.path}/api-docs    
+        url: /user-service/api-docs    
 
 server:
   port: 8080
