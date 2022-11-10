@@ -14,7 +14,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://${spring.security.security.user.name}:${spring.security.security.user.password}@develophost:8082/eureka/    
+      defaultZone: http://admin:admin@develophost:8082/eureka/    
 
 server:
   port: 8082
