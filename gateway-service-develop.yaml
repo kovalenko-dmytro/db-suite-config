@@ -2,12 +2,6 @@ spring:
   application:
     name: gateway-service
 
-discovery:
-  server:
-    security:
-      username: admin
-      password: admin
-
 eureka:  
   client:
     region: default
@@ -15,7 +9,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${discovery.server.security.username}:${discovery.server.security.password}@develophost:8082/template/eureka/
+      defaultZone: http://admin:admin@develophost:8082/template/eureka/
 
 zuul:
   routes:
