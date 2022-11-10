@@ -1,12 +1,11 @@
 spring:
   application:
     name: discovery-service
-
-discovery:
-  server:
-    security:
-      username: admin
+  security:
+    user:
+      name: admin
       password: admin
+      roles: SYSTEM  
 
 eureka:
   instance:
@@ -15,7 +14,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://localhost:8082/eureka/    
+      defaultZone: http://${spring.security.security.user.name}:${spring.security.security.user.password}@localhost:8082/eureka/    
 
 server:
   port: 8082
