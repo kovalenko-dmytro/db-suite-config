@@ -2,6 +2,12 @@ spring:
   application:
     name: discovery-service  
 
+discovery:
+  server:
+    security:
+      username: admin
+      password: admin
+
 eureka:
   instance:
     hostname: develophost
@@ -9,9 +15,9 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: http://develophost:8083/eureka/    
+      defaultZone: http://${discovery.server.security.username}:${discovery.server.security.password}@develophost:8082/eureka/    
 
 server:
-  port: 8083
+  port: 8082
   servlet:
     context-path: /template

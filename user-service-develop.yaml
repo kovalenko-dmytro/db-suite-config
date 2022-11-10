@@ -20,6 +20,12 @@ springdoc:
   api-docs:
     path: /api-docs    
 
+discovery:
+  server:
+    security:
+      username: admin
+      password: admin
+
 eureka:
   instance:
     hostname: develophost
@@ -29,7 +35,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 20
     serviceUrl:
-      defaultZone: http://develophost:8082/template/eureka/    
+      defaultZone: http://${discovery.server.security.username}:${discovery.server.security.password}@develophost:8082/template/eureka/    
 
 server:
   port: 8084
