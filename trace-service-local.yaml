@@ -25,6 +25,6 @@ logging:
         web: debug
 
 server:
-  port: 9411
+  port: 8085
   servlet:
-    context-path: 
+    context-path: /template
