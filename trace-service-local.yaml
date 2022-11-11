@@ -16,7 +16,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 20
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8082/eureka/    
+      defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
 logging:
   level:
