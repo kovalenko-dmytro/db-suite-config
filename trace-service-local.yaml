@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: trace-service
+  security:
+    user:
+      name: admin
+      password: admin
+      roles: SYSTEM  
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8082/eureka/    
+
+server:
+  port: 8085
+  servlet:
+    context-path: /template
