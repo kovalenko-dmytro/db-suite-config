@@ -18,6 +18,12 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/eureka/    
 
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+
 server:
   port: 8085
   servlet:
