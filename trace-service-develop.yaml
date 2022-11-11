@@ -27,4 +27,4 @@ logging:
 server:
   port: 9411
   servlet:
-    context-path: /template
+    context-path: 
