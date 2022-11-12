@@ -5,7 +5,9 @@ spring:
     user:
       name: admin
       password: admin
-      roles: SYSTEM  
+      roles: SYSTEM
+  zipkin:
+    baseUrl: http://develophost:9411/zipkin/      
 
 eureka:
   instance:
