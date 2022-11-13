@@ -15,6 +15,16 @@ spring:
     autostart: false
   mvc:
     log-resolved-exception: false
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    sender:
+      type: kafka
+    kafka:
+      topic: zipkin  
+  kafka:
+    bootstrap-servers: localhost:19092  
 
 springdoc:
   api-docs:
