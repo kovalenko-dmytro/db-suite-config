@@ -9,12 +9,11 @@ spring:
     service:
       name: gateway-service
     sender:
-      type: kafka
-    kafka:
-      topic: zipkin  
-  kafka:    
-      bootstrap-servers: 127.0.0.1:9092
-      client-id: gateway-service                    
+      type: rabbit      
+  rabbitmq:
+    addresses: 172.23.0.2:5672
+    username: admin
+    password: admin                     
 
 eureka:  
   client:
