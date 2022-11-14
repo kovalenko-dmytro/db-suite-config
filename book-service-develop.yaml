@@ -19,10 +19,7 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
-    base-url: http://develophost:9411/
-    collector:
-      kafka: 
-        bootstrap-servers: develophost:9092
+    base-url: http://develophost:9411/    
     service:
       name: book-service
     sender:
@@ -31,13 +28,7 @@ spring:
       topic: zipkin  
   kafka:
     bootstrap-servers: develophost:9092
-    client-id: book-service
-    consumer:
-      auto-offset-reset: earliest
-      properties:
-        allow.auto.create.topics: true 
-    producer:
-      auto-offset-reset: earliest              
+    client-id: book-service                  
 
 springdoc:
   api-docs:
