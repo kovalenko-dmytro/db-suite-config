@@ -31,8 +31,12 @@ spring:
     client-id: book-service
     consumer:
       auto-offset-reset: earliest
-    properties:
-      allow.auto.create.topics: true  
+      properties:
+        allow.auto.create.topics: true 
+    producer:
+      auto-offset-reset: earliest
+      properties:
+        allow.auto.create.topics: true  
 
 springdoc:
   api-docs:
