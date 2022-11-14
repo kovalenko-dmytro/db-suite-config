@@ -11,7 +11,9 @@ spring:
       topic: zipkin  
   kafka:    
       bootstrap-servers: 127.0.0.1:9092
-      client-id: gateway-service      
+      client-id: gateway-service
+      consumer:
+        auto-offset-reset: earliest      
 
 eureka:  
   client:

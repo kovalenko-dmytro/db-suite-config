@@ -25,7 +25,9 @@ spring:
       topic: zipkin  
   kafka:
     bootstrap-servers: develophost:9092
-    client-id: user-service  
+    client-id: user-service
+    consumer:
+      auto-offset-reset: earliest  
 
 springdoc:
   api-docs:
