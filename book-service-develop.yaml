@@ -37,9 +37,7 @@ spring:
       properties:
         allow.auto.create.topics: true 
     producer:
-      auto-offset-reset: earliest
-      properties:
-        allow.auto.create.topics: true        
+      auto-offset-reset: earliest              
 
 springdoc:
   api-docs:
