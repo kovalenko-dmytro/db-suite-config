@@ -5,6 +5,9 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
+    base-url: http://localhost:9411/
+    service:
+      name: gateway-service
     sender:
       type: kafka
     kafka:
@@ -14,8 +17,8 @@ spring:
       client-id: gateway-service
       consumer:
         auto-offset-reset: earliest
-        properties:
-          allow.auto.create.topics: true      
+      properties:
+        allow.auto.create.topics: true      
 
 eureka:  
   client:

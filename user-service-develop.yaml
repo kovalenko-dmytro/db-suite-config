@@ -19,6 +19,9 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
+    base-url: http://develophost:9411/
+    service:
+      name: user-service
     sender:
       type: kafka
     kafka:
