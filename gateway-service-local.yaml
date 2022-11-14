@@ -9,8 +9,8 @@ spring:
       type: kafka
     kafka:
       topic: zipkin  
-  kafka:
-    bootstrap-servers: localhost:19092  
+  kafka:    
+      bootstrap-servers: kafka:9092      
 
 eureka:  
   client:

@@ -24,7 +24,7 @@ spring:
     kafka:
       topic: zipkin  
   kafka:
-    bootstrap-servers: develophost:19092  
+    bootstrap-servers: kafka:9092  
 
 springdoc:
   api-docs:
