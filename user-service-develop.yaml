@@ -24,7 +24,8 @@ spring:
     kafka:
       topic: zipkin  
   kafka:
-    bootstrap-servers: 127.0.0.1:9092  
+    bootstrap-servers: develophost:9092
+    client-id: user-service  
 
 springdoc:
   api-docs:
