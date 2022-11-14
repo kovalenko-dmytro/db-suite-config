@@ -20,6 +20,9 @@ spring:
       probability: 1.0
   zipkin:
     base-url: http://develophost:9411/
+    collector:
+      kafka: 
+        bootstrap-servers: localhost:9092
     service:
       name: user-service
     sender:
