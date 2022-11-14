@@ -10,7 +10,7 @@ spring:
     kafka:
       topic: zipkin  
   kafka:    
-      bootstrap-servers: kafka:9092      
+      bootstrap-servers: 127.0.0.1:9092      
 
 eureka:  
   client:
