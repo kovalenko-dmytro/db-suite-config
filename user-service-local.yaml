@@ -27,7 +27,9 @@ spring:
     bootstrap-servers: 127.0.0.1:9092
     client-id: user-service
     consumer:
-      auto-offset-reset: earliest  
+      auto-offset-reset: earliest
+      properties:
+        allow.auto.create.topics: true  
 
 springdoc:
   api-docs:
