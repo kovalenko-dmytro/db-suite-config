@@ -23,7 +23,11 @@ spring:
     service:
       name: book-service
     sender:
-      type: rabbit      
+      type: rabbit
+    storage:
+      type: elasticsearch
+      elasticsearch:
+        hosts: localhost:9200            
   rabbitmq:
     host: 127.0.0.1
     port: 5672
