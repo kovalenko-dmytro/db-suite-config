@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: auth-service  
+  swagger:
+    autostart: false
+  mvc:
+    log-resolved-exception: false
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9411/    
+    service:
+      name: auth-service
+    sender:
+      type: rabbit
+    storage:
+      type: elasticsearch
+      elasticsearch:
+        hosts: localhost:9200            
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin             
+
+springdoc:
+  api-docs:
+    path: /api-docs    
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    region: default
+    register-with-eureka: true
+    fetch-registry: true
+    registryFetchIntervalSeconds: 20
+    serviceUrl:
+      defaultZone: http://admin:admin@localhost:8082/template/eureka/    
+
+server:  
+  port: 8085
+  forward-headers-strategy: framework
+  servlet:
+    context-path: /template
