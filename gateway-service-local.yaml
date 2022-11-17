@@ -42,7 +42,11 @@ zuul:
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8082/template                       
+      url: http://localhost:8082/template   
+    auth-service:
+      path: /auth-service/**
+      sensitive-headers: Set-Cookie,Authorization
+      url: http://localhost:8085/template                      
 
 
 hystrix:
@@ -61,7 +65,12 @@ hystrix:
           execution:
               isolation:
                   thread:
-                      timeoutInMilliseconds: 600000    
+                      timeoutInMilliseconds: 600000
+      auth-service:
+          execution:
+              isolation:
+                  thread:
+                      timeoutInMilliseconds: 600000                    
 
 springdoc:
   api-docs:
@@ -71,7 +80,9 @@ springdoc:
       - name: book-service
         url: /book-service/api-docs
       - name: user-service
-        url: /user-service/api-docs    
+        url: /user-service/api-docs
+      - name: auth-service
+        url: /auth-service/api-docs      
 
 server:
   port: 8080
