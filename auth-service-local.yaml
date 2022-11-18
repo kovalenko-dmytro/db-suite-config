@@ -40,7 +40,7 @@ eureka:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
 keycloak-server:
-  server-url: localhost:18080
+  server-url: http://localhost:18080
   realm: spring-microservices-template
   admin:
     username: admin
