@@ -39,8 +39,11 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
-keycloak-client:
+keycloak-server:
   server-url: localhost:18080
+  admin:
+    username: admin
+    password: admin
 
 server:  
   port: 8085
