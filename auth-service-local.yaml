@@ -42,6 +42,7 @@ eureka:
 keycloak-server:
   server-url: http://localhost:18080
   realm: spring-microservices-template
+  gateway-client-id: spring-microservices-template-gateway-service
   admin:
     username: admin
     password: admin
