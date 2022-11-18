@@ -43,6 +43,7 @@ keycloak-server:
   server-url: http://localhost:18080/auth
   realm: spring-microservices-template
   gateway-client-id: spring-microservices-template-gateway-service
+  gateway-client-secret: 756b0558-018b-4809-b478-bd5b4995d325
   admin:
     username: admin
     password: admin

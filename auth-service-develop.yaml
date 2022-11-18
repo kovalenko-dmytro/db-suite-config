@@ -42,6 +42,7 @@ eureka:
 keycloak-server:
   server-url: develophost:18080/auth
   gateway-client-id: spring-microservices-template-gateway-service
+  gateway-client-secret: 756b0558-018b-4809-b478-bd5b4995d325
   admin:
     username: admin
     password: admin  
