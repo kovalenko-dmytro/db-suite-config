@@ -39,6 +39,9 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
+keycloak-client:
+  server-url: localhost:18080
+
 server:  
   port: 8085
   forward-headers-strategy: framework
