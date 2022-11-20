@@ -32,7 +32,20 @@ spring:
     host: 127.0.0.1
     port: 5672
     username: admin
-    password: admin             
+    password: admin
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:            
+            client-id: spring-microservices-template-user-service
+            client-secret: cv9Y2Rdg8op2P4vavGJljrZoN0uGdXdJ
+            authorization-grant-type: authorization_code            
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
+            user-name-attribute: preferred_username               
 
 springdoc:
   api-docs:

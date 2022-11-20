@@ -22,7 +22,20 @@ spring:
     host: develophost
     port: 5672
     username: admin
-    password: admin             
+    password: admin
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:            
+            client-id: spring-microservices-template-auth-service
+            client-secret: 6zLKJnHUfyXSpa9QEwzXNADnVuZ34oqc
+            authorization-grant-type: authorization_code            
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://develophost:18080/auth/realms/spring-microservices-template
+            user-name-attribute: preferred_username               
 
 springdoc:
   api-docs:
