@@ -45,7 +45,10 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://develophost:18080/auth/realms/spring-microservices-template
-            user-name-attribute: preferred_username               
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://develophost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs                           
 
 springdoc:
   api-docs:
