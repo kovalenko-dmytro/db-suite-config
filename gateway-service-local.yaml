@@ -31,7 +31,10 @@ spring:
         provider:
           keycloak:
             issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
-            user-name-attribute: preferred_username                                        
+            user-name-attribute: preferred_username
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs                                              
 
 eureka:  
   client:
