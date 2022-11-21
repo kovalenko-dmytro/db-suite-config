@@ -34,7 +34,31 @@ spring:
             user-name-attribute: preferred_username
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs                                              
+          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs
+  cloud:
+    gateway:
+      routes:
+       - id: book-service
+         uri: http://localhost:8083/template
+         predicates:
+          - Path=/book-service/**
+         filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie
+       - id: user-service
+         uri: http://localhost:8084/template
+         predicates:
+          - Path=/user-service/**
+         filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie
+       - id: auth-service
+         uri: http://localhost:8085/template
+         predicates:
+          - Path=/auth-service/**
+         filters:
+          - TokenRelay=
+          - RemoveRequestHeader=Cookie                                                                          
 
 eureka:  
   client:
@@ -44,49 +68,6 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/
-
-zuul:
-  routes:
-    book-service:
-      path: /book-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8083/template
-    user-service:
-      path: /user-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8084/template  
-    discovery-service:
-      path: /discovery-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8082/template   
-    auth-service:
-      path: /auth-service/**
-      sensitive-headers: Set-Cookie,Authorization
-      url: http://localhost:8085/template                      
-
-
-hystrix:
-  command:
-      book-service:
-          execution:
-              isolation:
-                  thread:
-                      timeoutInMilliseconds: 600000
-      user-service:
-          execution:
-              isolation:
-                  thread:
-                      timeoutInMilliseconds: 600000
-      discovery-service:
-          execution:
-              isolation:
-                  thread:
-                      timeoutInMilliseconds: 600000
-      auth-service:
-          execution:
-              isolation:
-                  thread:
-                      timeoutInMilliseconds: 600000                    
 
 springdoc:
   api-docs:
