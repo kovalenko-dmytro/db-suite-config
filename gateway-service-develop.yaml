@@ -58,7 +58,9 @@ spring:
           - Path=/auth-service/**
          filters:
           - TokenRelay=
-          - RemoveRequestHeader=Cookie                                     
+          - RemoveRequestHeader=Cookie
+  main:
+    allow-bean-definition-overriding: true                                               
 
 eureka:  
   client:
