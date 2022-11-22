@@ -89,7 +89,7 @@ springdoc:
       - name: user-service
         url: /user-service/api-docs
       - name: auth-service
-        url: /auth-service/v3/api-docs      
+        url: /auth-service/api-docs      
 
 server:
   port: 8080
