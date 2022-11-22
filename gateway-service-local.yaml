@@ -59,12 +59,12 @@ spring:
          filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
-       - id: openapi
-         uri: http://localhost:8080/template
-         predicates:
-          - Path=/v3/api-docs/**
-         filters:
-          - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs   
+       #- id: openapi
+         #uri: http://localhost:8080/template
+         #predicates:
+          #- Path=/v3/api-docs/**
+         #filters:
+          #- RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs   
   main:
     allow-bean-definition-overriding: true                                                                                  
 
