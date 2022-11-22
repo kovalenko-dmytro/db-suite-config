@@ -85,11 +85,11 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: /v3/api-docs/book-service/**
+        url: /book-service/v3/api-docs
       - name: user-service
-        url: /v3/api-docs/user-service/**
+        url: /user-service/v3/api-docs
       - name: auth-service
-        url: /v3/api-docs/auth-service/**      
+        url: /auth-service/v3/api-docs      
 
 server:
   port: 8080
