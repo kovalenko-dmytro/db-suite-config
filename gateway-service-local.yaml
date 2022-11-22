@@ -77,17 +77,17 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/
 
-#springdoc:
-  #api-docs:
-    #enabled: true    
-  #swagger-ui:    
-    #urls:
-      #- name: book-service
-        #url: /book-service/v3/api-docs/
-      #- name: user-service
-        #url: /user-service/v3/api-docs/
-      #- name: auth-service
-        #url: /auth-service/v3/api-docs/      
+springdoc:
+  api-docs:
+    enabled: true    
+  swagger-ui:    
+    urls:
+      - name: book-service
+        url: /book-service/v3/api-docs/
+      - name: user-service
+        url: /user-service/v3/api-docs/
+      - name: auth-service
+        url: /auth-service/v3/api-docs/      
 
 server:
   port: 8080
