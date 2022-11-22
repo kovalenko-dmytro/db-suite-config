@@ -59,6 +59,12 @@ spring:
          filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
+       - id: openapi
+         uri: http://localhost:8080/template
+         predicates:
+          - Path=/v3/api-docs/**
+         filters:
+          - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs   
   main:
     allow-bean-definition-overriding: true                                                                                  
 
@@ -77,11 +83,11 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: /book-service/api-docs
+        url: /book-service/v3/api-docs/
       - name: user-service
-        url: /user-service/api-docs
+        url: /user-service/v3/api-docs/
       - name: auth-service
-        url: /auth-service/api-docs      
+        url: /auth-service/v3/api-docs/      
 
 server:
   port: 8080
