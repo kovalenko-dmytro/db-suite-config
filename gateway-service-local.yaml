@@ -41,34 +41,26 @@ spring:
     gateway:
       routes:
        - id: book-service
-         uri: http://localhost:8083/template
+         uri: lb://book-service
          predicates:
           - Path=/book-service/**
          filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
        - id: user-service
-         uri: http://localhost:8084/template
+         uri: lb://user-service
          predicates:
           - Path=/user-service/**
          filters:
           - TokenRelay=
           - RemoveRequestHeader=Cookie
        - id: auth-service
-         uri: http://localhost:8085/template
+         uri: lb://auth-service
          predicates:
           - Path=/auth-service/**
          filters:
           - TokenRelay=
-          - RemoveRequestHeader=Cookie
-       #- id: openapi
-         #uri: http://localhost:8080/template
-         #predicates:
-          #- Path=/v3/api-docs/**
-         #filters:
-          #- RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs   
-  main:
-    allow-bean-definition-overriding: true                                                                                  
+          - RemoveRequestHeader=Cookie                                                                                  
 
 eureka:  
   client:
