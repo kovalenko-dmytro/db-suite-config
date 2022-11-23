@@ -21,22 +21,22 @@ spring:
     port: 5672
     username: admin
     password: admin
-  security:
-    oauth2:
-      client:
-        registration:
-          keycloak:            
-            client-id: spring-microservices-template-gateway-service
-            client-secret: yj72kNVj20RAQaKolxYsKqo7ecwnTg2v
-            authorization-grant-type: authorization_code            
-            scope: openid
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
-            user-name-attribute: preferred_username
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs
+  #security:
+    #oauth2:
+      #client:
+        #registration:
+          #keycloak:            
+            #client-id: spring-microservices-template-gateway-service
+            #client-secret: yj72kNVj20RAQaKolxYsKqo7ecwnTg2v
+            #authorization-grant-type: authorization_code            
+            #scope: openid
+        #provider:
+          #keycloak:
+            #issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
+            #user-name-attribute: preferred_username
+      #resourceserver:
+        #jwt:
+          #jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs
   cloud:
     gateway:
       routes:
