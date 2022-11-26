@@ -22,23 +22,7 @@ spring:
     host: 127.0.0.1
     port: 5672
     username: admin
-    password: admin
-  security:
-    oauth2:
-      client:
-        registration:
-          keycloak:            
-            client-id: spring-microservices-template-auth-service
-            client-secret: 6zLKJnHUfyXSpa9QEwzXNADnVuZ34oqc
-            authorization-grant-type: authorization_code            
-            scope: openid
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
-            user-name-attribute: preferred_username
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs                           
+    password: admin  
 
 springdoc:
   api-docs:
@@ -54,15 +38,6 @@ eureka:
     registryFetchIntervalSeconds: 20
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
-
-keycloak-server:
-  server-url: http://localhost:18080/auth
-  realm: spring-microservices-template
-  gateway-client-id: spring-microservices-template-gateway-service
-  gateway-client-secret: yj72kNVj20RAQaKolxYsKqo7ecwnTg2v
-  admin:
-    username: admin
-    password: admin
 
 server:  
   port: 8085
