@@ -23,27 +23,41 @@ spring:
     password: admin  
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true 
       routes:
        - id: discovery-service
          uri: http://localhost:8082/template
          predicates:
           - Path=/discovery-service/**
-         filters: 
+         filters:
+          - RewritePath=/discovery-service/(?<path>.*), /$\{path} 
        - id: book-service
          uri: lb://book-service
          predicates:
           - Path=/book-service/**
-         filters:          
+         filters:
+          - RewritePath=/book-service/(?<path>.*), /$\{path}           
        - id: user-service
          uri: lb://user-service
          predicates:
           - Path=/user-service/**
-         filters:          
+         filters:
+          - RewritePath=/user-service/(?<path>.*), /$\{path}           
        - id: auth-service
          uri: lb://auth-service
          predicates:
           - Path=/auth-service/**
-         filters:                                                                                          
+         filters:
+          - RewritePath=/auth-service/(?<path>.*), /$\{path}
+       - id: openapi
+         uri: http://localhost:8080/template
+         predicates:
+          - Path=/v3/api-docs/**
+         filters:
+          - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+                                                                                                               
 
 eureka:  
   client:
