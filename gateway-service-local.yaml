@@ -27,12 +27,6 @@ spring:
         locator:
           enabled: true 
       routes:
-       - id: discovery-service
-         uri: http://localhost:8082/template
-         predicates:
-          - Path=/discovery-service/**
-         filters:
-          - RewritePath=/discovery-service/(?<path>.*), /$\{path} 
        - id: book-service
          uri: lb://book-service
          predicates:
@@ -74,11 +68,11 @@ springdoc:
   swagger-ui:    
     urls:
       - name: book-service
-        url: http://localhost:8083/v3/api-docs
+        url: /v3/api-docs/book-service
       - name: user-service
-        url: http://localhost:8084/v3/api-docs
+        url: /v3/api-docs/user-service
       - name: auth-service
-        url: http://localhost:8085/v3/api-docs      
+        url: /v3/api-docs/auth-service      
 
 server:
   port: 8080
