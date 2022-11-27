@@ -24,6 +24,11 @@ spring:
   cloud:
     gateway:
       routes:
+       - id: discovery-service
+         uri: http://localhost:8082/template
+         predicates:
+          - Path=/discovery-service/**
+         filters: 
        - id: book-service
          uri: lb://book-service
          predicates:
