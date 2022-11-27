@@ -28,19 +28,19 @@ spring:
           enabled: true 
       routes:
        - id: book-service
-         uri: lb://book-service
+         uri: lb://book-service/template
          predicates:
           - Path=/book-service/**
          filters:
           - RewritePath=/book-service/(?<path>.*), /$\{path}           
        - id: user-service
-         uri: lb://user-service
+         uri: lb://user-service/template
          predicates:
           - Path=/user-service/**
          filters:
           - RewritePath=/user-service/(?<path>.*), /$\{path}           
        - id: auth-service
-         uri: lb://auth-service
+         uri: lb://auth-service/template
          predicates:
           - Path=/auth-service/**
          filters:
