@@ -92,6 +92,11 @@ springdoc:
       - name: user-service
         url: /user-service/api-docs
 
+access:
+  load:
+    user:
+      username: admin 
+      password: admin
 
 server:
   port: 8080
