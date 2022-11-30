@@ -42,19 +42,19 @@ zuul:
   routes:      
     discovery-service:
       path: /discovery-service/**
-      sensitive-headers: Set-Cookie,Authorization
+      sensitive-headers: Set-Cookie
       url: http://localhost:8082/template
     book-service:
       path: /book-service/**
-      sensitive-headers: Set-Cookie,Authorization
+      sensitive-headers: Set-Cookie
       url: http://localhost:8083/template
     user-service:
       path: /user-service/**
-      sensitive-headers: Set-Cookie,Authorization
+      sensitive-headers: Set-Cookie
       url: http://localhost:8084/template
     auth-service:
       path: /auth-service/**
-      sensitive-headers: Set-Cookie,Authorization
+      sensitive-headers: Set-Cookie
       url: http://localhost:8085/template                           
 
 hystrix:
