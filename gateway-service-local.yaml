@@ -22,7 +22,7 @@ spring:
   session:
     store-type: redis
     redis:
-      flush-mode: immediate
+      flush-mode: on_save
       namespace: spring:session:template
   redis:
     host: localhost
@@ -102,4 +102,12 @@ server:
   port: 8080
   forward-headers-strategy: framework  
   servlet:
-    context-path: /template  
+    context-path: /template
+  session:
+      cookie:
+        path: /
+        name: SESSION
+        http-only: true
+        domain: localhost
+        secure: true
+      timeout: 3600    

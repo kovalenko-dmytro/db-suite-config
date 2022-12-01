@@ -69,3 +69,11 @@ server:
   forward-headers-strategy: framework
   servlet:
     context-path: /template
+  session:
+      cookie:
+        path: /
+        name: SESSION
+        http-only: true
+        domain: localhost
+        secure: true
+      timeout: 3600    
