@@ -36,7 +36,7 @@ spring:
   session:
     store-type: redis
     redis:
-      flush-mode: on_save
+      flush-mode: immediate
       #namespace: spring:session:template
   redis:
     host: localhost
