@@ -59,7 +59,7 @@ server:
   forward-headers-strategy: framework
   servlet:
     context-path: /template
-  session:
+    session:
       cookie:
         path: /
         name: SESSION
