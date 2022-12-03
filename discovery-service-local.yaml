@@ -7,9 +7,7 @@ spring:
       password: admin
       roles: SYSTEM
   session:
-    store-type: redis
-    redis:       
-      namespace: spring:session:template
+    store-type: redis    
   redis:
     host: localhost
     port: 6379
