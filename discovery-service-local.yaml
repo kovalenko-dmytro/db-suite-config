@@ -8,8 +8,7 @@ spring:
       roles: SYSTEM
   session:
     store-type: redis
-    redis:
-      flush-mode: 
+    redis:       
       namespace: spring:session:template
   redis:
     host: localhost
