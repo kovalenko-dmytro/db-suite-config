@@ -18,16 +18,7 @@ spring:
     host: 127.0.0.1
     port: 5672
     username: admin
-    password: admin
-  #session:
-    #store-type: redis
-    #redis:
-      #flush-mode: 
-      #namespace: spring:session:template    
-  #redis:
-    #host: localhost
-    #port: 6379
-    #password: admin    
+    password: admin      
 
 eureka:  
   client:
@@ -102,12 +93,4 @@ server:
   port: 8080
   forward-headers-strategy: framework  
   servlet:
-    context-path: /template
-    #session:
-      #cookie:
-        #path: /
-        #name: SESSION
-        #http-only: true 
-        #domain: localhost
-        #secure: true 
-      #timeout: 3600    
+    context-path: /template        
