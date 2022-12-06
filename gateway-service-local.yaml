@@ -1,8 +1,6 @@
 spring:
   application:
-    name: gateway-service
-  webflux:
-    base-path: /template  
+    name: gateway-service    
   sleuth:
     sampler:
       probability: 1.0
@@ -20,47 +18,7 @@ spring:
     host: 127.0.0.1
     port: 5672
     username: admin
-    password: admin
-  security:
-    oauth2:
-      client:
-        registration:
-          keycloak:            
-            client-id: spring-microservices-template-gateway-service
-            client-secret: yj72kNVj20RAQaKolxYsKqo7ecwnTg2v
-            authorization-grant-type: authorization_code            
-            scope: openid
-        provider:
-          keycloak:
-            issuer-uri: http://localhost:18080/auth/realms/spring-microservices-template
-            user-name-attribute: preferred_username
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:18080/auth/realms/spring-microservices-template/protocol/openid-connect/certs
-  cloud:
-    gateway:
-      routes:
-       - id: book-service
-         uri: lb://book-service
-         predicates:
-          - Path=/book-service/**
-         filters:
-          - TokenRelay=
-          - RemoveRequestHeader=Cookie
-       - id: user-service
-         uri: lb://user-service
-         predicates:
-          - Path=/user-service/**
-         filters:
-          - TokenRelay=
-          - RemoveRequestHeader=Cookie
-       - id: auth-service
-         uri: lb://auth-service
-         predicates:
-          - Path=/auth-service/**
-         filters:
-          - TokenRelay=
-          - RemoveRequestHeader=Cookie                                                                                  
+    password: admin      
 
 eureka:  
   client:
@@ -71,20 +29,62 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/
 
+zuul:
+  routes:      
+    discovery-service:
+      path: /discovery-service/**
+      sensitive-headers: 
+      url: http://localhost:8082/template
+    book-service:
+      path: /book-service/**
+      sensitive-headers: 
+      url: http://localhost:8083/template
+    user-service:
+      path: /user-service/**
+      sensitive-headers: 
+      url: http://localhost:8084/template
+    some-service:
+      path: /some-service/**
+      sensitive-headers: 
+      url: http://localhost:8085/template                           
+
+hystrix:
+  command:
+    discovery-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+    book-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+    user-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+    some-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000  
+
 springdoc:
   api-docs:
     enabled: true    
   swagger-ui:    
-    urls:
+    urls:      
       - name: book-service
         url: /book-service/api-docs
       - name: user-service
         url: /user-service/api-docs
-      - name: auth-service
-        url: /auth-service/api-docs      
+      - name: some-service
+        url: /some-service/api-docs  
 
 server:
   port: 8080
   forward-headers-strategy: framework  
   servlet:
-    context-path: /template  
+    context-path: /template        

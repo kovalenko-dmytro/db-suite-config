@@ -1,16 +1,6 @@
 spring:
   application:
-    name: user-service  
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    open-in-view: false
-  liquibase:
-    change-log: classpath:db/db.changelog.xml
-  datasource:
-    url: jdbc:postgresql://localhost:5432/microservices_template_user_service_db
-    username: postgres
-    password: root
+    name: some-service  
   swagger:
     autostart: false
   mvc:
@@ -21,7 +11,7 @@ spring:
   zipkin:
     base-url: http://localhost:9411/    
     service:
-      name: user-service
+      name: some-service
     sender:
       type: rabbit
     storage:
@@ -36,16 +26,16 @@ spring:
   session:
     store-type: redis
     redis:
-      flush-mode: on_save
-      namespace: spring:session:template     
+      flush-mode: 
+      namespace: spring:session:template    
   redis:
     host: localhost
     port: 6379
-    password: admin  
-  
+    password: admin     
+
 springdoc:
   api-docs:
-    path: /api-docs    
+    path: /api-docs
 
 eureka:
   instance:
@@ -59,7 +49,7 @@ eureka:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
 server:  
-  port: 8084
+  port: 8085
   forward-headers-strategy: framework
   servlet:
     context-path: /template
