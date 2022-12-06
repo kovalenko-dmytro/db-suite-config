@@ -83,12 +83,6 @@ springdoc:
       - name: some-service
         url: /some-service/api-docs  
 
-access:
-  load:
-    user:
-      username: admin 
-      password: admin
-
 server:
   port: 8080
   forward-headers-strategy: framework  

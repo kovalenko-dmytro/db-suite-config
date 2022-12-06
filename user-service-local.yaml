@@ -58,12 +58,6 @@ eureka:
     serviceUrl:
       defaultZone: http://admin:admin@localhost:8082/template/eureka/    
 
-access:
-  load:
-    user:
-      username: admin 
-      password: admin
-
 server:  
   port: 8084
   forward-headers-strategy: framework

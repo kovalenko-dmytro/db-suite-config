@@ -37,12 +37,6 @@ springdoc:
   api-docs:
     path: /api-docs
 
-access:
-  load:
-    user:
-      username: admin 
-      password: admin        
-
 eureka:
   instance:
     hostname: localhost
