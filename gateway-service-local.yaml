@@ -27,7 +27,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8082/template/eureka/
+      defaultZone: https://admin:admin@localhost:8082/template/eureka/
 
 zuul:
   routes:      

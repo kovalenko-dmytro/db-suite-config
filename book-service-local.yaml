@@ -56,7 +56,7 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 20
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8082/template/eureka/    
+      defaultZone: https://admin:admin@localhost:8082/template/eureka/    
 
 server:  
   port: 8083
