@@ -14,7 +14,7 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     serviceUrl:
-      defaultZone: https://admin:admin@localhost:8082/eureka/    
+      defaultZone: http://admin:admin@localhost:8082/eureka/    
 
 server:
   port: 8082
