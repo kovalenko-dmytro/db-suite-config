@@ -27,7 +27,7 @@ spring:
     store-type: redis
     redis:
       flush-mode: 
-      namespace: spring:session:template    
+      namespace: spring:session:db-suite    
   redis:
     host: localhost
     port: 6379
@@ -46,13 +46,13 @@ eureka:
     fetch-registry: true
     registryFetchIntervalSeconds: 20
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8082/template/eureka/    
+      defaultZone: http://admin:admin@localhost:8082/db-suite/eureka/    
 
 server:  
   port: 8085
   forward-headers-strategy: framework
   servlet:
-    context-path: /template
+    context-path: /db-suite
     session:
       cookie:
         path: /

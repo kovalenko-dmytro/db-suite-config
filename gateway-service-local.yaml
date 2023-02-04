@@ -27,26 +27,26 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://admin:admin@localhost:8082/template/eureka/
+      defaultZone: http://admin:admin@localhost:8082/db-suite/eureka/
 
 zuul:
   routes:      
     discovery-service:
       path: /discovery-service/**
       sensitive-headers: 
-      url: http://localhost:8082/template
+      url: http://localhost:8082/db-suite
     book-service:
       path: /book-service/**
       sensitive-headers: 
-      url: http://localhost:8083/template
+      url: http://localhost:8083/db-suite
     user-service:
       path: /user-service/**
       sensitive-headers: 
-      url: http://localhost:8084/template
+      url: http://localhost:8084/db-suite
     some-service:
       path: /some-service/**
       sensitive-headers: 
-      url: http://localhost:8085/template                           
+      url: http://localhost:8085/db-suite                           
 
 hystrix:
   command:
@@ -87,4 +87,4 @@ server:
   port: 8080
   forward-headers-strategy: framework  
   servlet:
-    context-path: /template        
+    context-path: /db-suite        
