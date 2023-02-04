@@ -35,8 +35,8 @@ zuul:
       path: /discovery-service/**
       sensitive-headers: 
       url: http://localhost:8082/db-suite
-    book-service:
-      path: /book-service/**
+    vendor-service:
+      path: /vendor-service/**
       sensitive-headers: 
       url: http://localhost:8083/db-suite
     user-service:
@@ -55,7 +55,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
-    book-service:
+    vendor-service:
       execution:
         isolation:
           thread:
@@ -76,8 +76,8 @@ springdoc:
     enabled: true    
   swagger-ui:    
     urls:      
-      - name: book-service
-        url: /book-service/api-docs
+      - name: vendor-service
+        url: /vendor-service/api-docs
       - name: user-service
         url: /user-service/api-docs
       - name: some-service
