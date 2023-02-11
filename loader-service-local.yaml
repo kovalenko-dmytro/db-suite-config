@@ -49,9 +49,7 @@ springdoc:
 
 feign:
   hystrix:
-    enabled: true 
-  httpclient:
-    enabled: true   
+    enabled: true      
 
 eureka:
   instance:

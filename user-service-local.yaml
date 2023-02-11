@@ -42,7 +42,11 @@ spring:
     host: localhost
     port: 6379
     password: admin  
-  
+
+feign:
+  hystrix:
+    enabled: true 
+
 springdoc:
   api-docs:
     path: /api-docs    

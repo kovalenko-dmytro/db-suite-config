@@ -49,6 +49,7 @@ zuul:
       url: http://localhost:8085/db-suite                           
 
 hystrix:
+  shareSecurityContext: true 
   command:
     discovery-service:
       execution:
