@@ -50,7 +50,7 @@ springdoc:
 feign:
   hystrix:
     enabled: true 
-  okhttp:
+  httpclient:
     enabled: true   
 
 eureka:
