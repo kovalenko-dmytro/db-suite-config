@@ -51,6 +51,10 @@ feign:
   hystrix:
     enabled: true      
 
+client:
+  vendor-service:
+    base-uri: localhost:8080/db-suite/vendor-service
+    
 eureka:
   instance:
     hostname: localhost
