@@ -1,6 +1,6 @@
 spring:
   application:
-    name: loader-service
+    name: metadata-service
   jpa:
     hibernate:
       ddl-auto: validate
@@ -8,7 +8,7 @@ spring:
   liquibase:
     change-log: classpath:db/db.changelog.xml
   datasource:
-    url: jdbc:postgresql://localhost:5432/db-suite_loader_service_db
+    url: jdbc:postgresql://localhost:5432/db-suite_metadata_service_db
     username: postgres
     password: root
   swagger:
@@ -21,7 +21,7 @@ spring:
   zipkin:
     base-url: http://localhost:9411/    
     service:
-      name: loader-service
+      name: metadata-service
     sender:
       type: rabbit
     storage:

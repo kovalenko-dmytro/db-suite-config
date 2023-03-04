@@ -43,8 +43,8 @@ zuul:
       path: /user-service/**
       sensitive-headers: 
       url: http://localhost:8084/db-suite
-    loader-service:
-      path: /loader-service/**
+    metadata-service:
+      path: /metadata-service/**
       sensitive-headers: 
       url: http://localhost:8085/db-suite                           
 
@@ -66,7 +66,7 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
-    loader-service:
+    metadata-service:
       execution:
         isolation:
           thread:
@@ -81,8 +81,8 @@ springdoc:
         url: /vendor-service/api-docs
       - name: user-service
         url: /user-service/api-docs
-      - name: loader-service
-        url: /loader-service/api-docs  
+      - name: metadata-service
+        url: /metadata-service/api-docs
 
 server:
   port: 8080
