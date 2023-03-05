@@ -30,6 +30,8 @@ eureka:
       defaultZone: http://admin:admin@localhost:8082/db-suite/eureka/
 
 zuul:
+  host:
+    connect-timeout-millis: 60000
   routes:      
     discovery-service:
       path: /discovery-service/**
