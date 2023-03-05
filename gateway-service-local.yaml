@@ -31,7 +31,7 @@ eureka:
 
 zuul:
   host:
-    connect-timeout-millis: 60000
+    connect-timeout-millis: 300000
     socket-timeout-millis: 300000
   routes:      
     discovery-service:
