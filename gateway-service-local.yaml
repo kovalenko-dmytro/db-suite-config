@@ -31,10 +31,7 @@ eureka:
 
 zuul:
   host:
-    time-to-live: -1
     connect-timeout-millis: 300000
-    max-per-route-connections: 10000
-    max-total-connections: 5000
     socket-timeout-millis: 300000
   routes:      
     discovery-service:
