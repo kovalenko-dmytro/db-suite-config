@@ -31,8 +31,13 @@ eureka:
 
 zuul:
   host:
+    time-to-live: -1
     connect-timeout-millis: 300000
+    max-per-route-connections: 10000
+    max-total-connections: 5000
     socket-timeout-millis: 300000
+    semaphore:
+      max-semaphores: 500
   routes:      
     discovery-service:
       path: /discovery-service/**
@@ -50,6 +55,12 @@ zuul:
       path: /metadata-service/**
       sensitive-headers: 
       url: http://localhost:8085/db-suite                           
+
+ribbon:
+  ReadTimeout: 300000
+  connection-timeout: 300000
+  eureka:
+    enabled: true
 
 hystrix:
   shareSecurityContext: true 
