@@ -36,8 +36,6 @@ zuul:
     max-per-route-connections: 10000
     max-total-connections: 5000
     socket-timeout-millis: 300000
-    semaphore:
-      max-semaphores: 500
   routes:      
     discovery-service:
       path: /discovery-service/**
