@@ -14,7 +14,9 @@ spring:
   swagger:
     autostart: false
   mvc:
-    log-resolved-exception: false  
+    log-resolved-exception: false
+    async:
+      request-timeout: 60000
   sleuth:
     sampler:
       probability: 1.0
