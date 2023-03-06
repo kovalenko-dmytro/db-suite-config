@@ -30,6 +30,12 @@ eureka:
       defaultZone: http://admin:admin@localhost:8082/db-suite/eureka/
 
 zuul:
+  host:
+    time-to-live: -1
+    connect-timeout-millis: 300000
+    max-per-route-connections: 10000
+    max-total-connections: 5000
+    socket-timeout-millis: 300000
   routes:      
     discovery-service:
       path: /discovery-service/**
@@ -47,6 +53,12 @@ zuul:
       path: /metadata-service/**
       sensitive-headers: 
       url: http://localhost:8085/db-suite                           
+
+ribbon:
+  ReadTimeout: 300000
+  connection-timeout: 300000
+  eureka:
+    enabled: true
 
 hystrix:
   shareSecurityContext: true 
@@ -86,6 +98,7 @@ springdoc:
 
 server:
   port: 8080
-  forward-headers-strategy: framework  
+  forward-headers-strategy: framework
+  connection-timeout: 300000
   servlet:
     context-path: /db-suite        

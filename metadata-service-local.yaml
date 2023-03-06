@@ -69,6 +69,7 @@ eureka:
 server:  
   port: 8085
   forward-headers-strategy: framework
+  connection-timeout: 300000
   servlet:
     context-path: /db-suite
     session:
