@@ -52,7 +52,11 @@ zuul:
     metadata-service:
       path: /metadata-service/**
       sensitive-headers: 
-      url: http://localhost:8085/db-suite                           
+      url: http://localhost:8085/db-suite
+    compare-service:
+      path: /compare-service/**
+      sensitive-headers:
+      url: http://localhost:8086/db-suite
 
 ribbon:
   ReadTimeout: 300000
@@ -83,6 +87,11 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000  
+    compare-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
 
 springdoc:
   api-docs:
@@ -95,6 +104,8 @@ springdoc:
         url: /user-service/api-docs
       - name: metadata-service
         url: /metadata-service/api-docs
+      - name: compare-service
+        url: /compare-service/api-docs
 
 server:
   port: 8080
